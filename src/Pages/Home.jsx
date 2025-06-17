@@ -3,6 +3,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 import './Home.css'
+import Slider from "../Component/Slider"
+
 const Home = () => {
   useGSAP(() => {
     gsap.from('#updiv p', {
@@ -63,49 +65,49 @@ const Home = () => {
         start: 'top 70%',
         end: 'bottom 40%',
         // markers: true,
-        // scrub: 1,
+        scrub: 1,
       }
     })
 
-gsap.from('.HeadPhone-side',{
-  opacity:0,
-  duration:2,
-  ease:'power1.inOut',
-  scale:0.5,
-  scrollTrigger:{
-    trigger:'.HeadPhone-side',
-    markers:true,
-    start:'top 70%',
-    end:'bottom 40%',
-    scrub:1
-  }
-})
-gsap.from('.HeadPhone-side-down',{
-  opacity:0,
-  duration:2,
-  ease:'power1.inOut',
-  scale:0.5,
-  scrollTrigger:{
-    trigger:'.HeadPhone-side-down',
-    markers:true,
-    start:'top 100%',
-    end:'bottom 40%',
-    scrub:1
-  }
-})
-gsap.from('.HeadPhone-center',{
-  opacity:0,
-  duration:2,
-  ease:'power1.inOut',
-  scale:0.5,
-  scrollTrigger:{
-    trigger:'.HeadPhone-center',
-    markers:true,
-    start:'top 100%',
-    end:'bottom 40%',
-    scrub:1
-  }
-})
+    gsap.from('.HeadPhone-side', {
+      opacity: 0,
+      duration: 2,
+      ease: 'power1.inOut',
+      scale: 0.5,
+      scrollTrigger: {
+        trigger: '.HeadPhone-side',
+        // markers:true,
+        start: 'top 70%',
+        end: 'bottom 40%',
+        scrub: 1
+      }
+    })
+    gsap.from('.HeadPhone-side-down', {
+      opacity: 0,
+      duration: 2,
+      ease: 'power1.inOut',
+      scale: 0.5,
+      scrollTrigger: {
+        trigger: '.HeadPhone-side-down',
+        // markers:true,
+        start: 'top 100%',
+        end: 'bottom 40%',
+        scrub: 1
+      }
+    })
+    gsap.from('.HeadPhone-center', {
+      opacity: 0,
+      duration: 2,
+      ease: 'power1.inOut',
+      scale: 2,
+      scrollTrigger: {
+        trigger: '.HeadPhone-center',
+        // markers:true,
+        start: 'top 100%',
+        end: 'bottom 40%',
+        scrub: 1
+      }
+    })
 
   })
   return (
@@ -124,7 +126,7 @@ gsap.from('.HeadPhone-center',{
           <div id="right" />
           <div id="left" />
         </div>
-        <div id="HadphoneAboutDiv" className="mt-3">
+        <div id="HadphoneAboutDiv" className="mt-5">
           <div className="container ">
             <div className="row">
               <div className="col-md-6 rowheight  ">
@@ -152,7 +154,7 @@ gsap.from('.HeadPhone-center',{
           </div>
         </div>
 
-        <div className="container-fluid border mt-5 gradient m-0 p-0">
+        <div className="container-fluid  mt-5 gradient m-0 p-0">
           <div className="Headingtext">
             <h2>WHY CHOOSE HARMONY HUB ?</h2>
           </div>
@@ -187,7 +189,71 @@ gsap.from('.HeadPhone-center',{
         </div>
       </div>
 
+      <div className="slide">
+        <Slider />
 
+      </div>
+
+      <div className="container mt-5">
+        <div className="row g-4">
+          {/* Top Row - Two Cards */}
+          <div className="col-md-6">
+            <div className="buysection-card">
+              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
+                <div className="buysection-overlay">
+                  <h3>Summer Collection</h3>
+                  <button className="btn btn-outline-light mt-3">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="buysection-card">
+              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-3.jpg)" }}>
+                <div className="buysection-overlay">
+                  <h3>Winter Essentials</h3>
+                  <button className="btn btn-outline-light mt-3">Explore</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Middle Row - Full Width Card */}
+          <div className="col-12">
+            <div className="buysection-card">
+              <div className="buysection-img-center" style={{ backgroundImage: "url(../../public/baner-2.jpg)" }}>
+                <div className="buysection-overlay">
+                  <h2 className="display-5">Limited Time Offer</h2>
+                  <p className="lead">Up to 50% Off Selected Items</p>
+                  <button className="btn btn-danger mt-3 px-4 py-2">Get Deal</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row - Two Cards */}
+          <div className="col-md-6">
+            <div className="buysection-card">
+              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
+                <div className="buysection-overlay">
+                  <h3>New Arrivals</h3>
+                  <button className="btn btn-outline-light mt-3">View All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="buysection-card">
+              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
+                <div className="buysection-overlay">
+                  <h3>Accessories</h3>
+                  <button className="btn btn-outline-light mt-3">Browse</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
