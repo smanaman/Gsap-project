@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 import './Home.css'
 import Slider from "../Component/Slider"
+import { Link } from "react-router-dom"
+import Navbar from "../Component/Navbar"
 
 const Home = () => {
   useGSAP(() => {
@@ -109,9 +111,49 @@ const Home = () => {
       }
     })
 
+    gsap.from('.buysection-img', {
+      x: -300,
+      opacity: 0,
+      duration: 2,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.buysection-heading h2',
+        start: 'top 30%',
+        end: 'bottom 40%',
+        scrub: 1,
+        // markers:true
+      }
+    })
+    gsap.from('.buysection-img-center', {
+      x: 300,
+      opacity: 0,
+      duration: 2,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.buysection-heading h2',
+        start: 'top 0%',
+        end: 'bottom 40%',
+        scrub: 1,
+        // markers:true
+      }
+    })
+    gsap.from('.buysection-img2', {
+      x: -300,
+      opacity: 0,
+      duration: 2,
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.buysection-heading h2',
+        start: 'top -30%',
+        end: 'bottom 40%',
+        scrub: 1,
+        // markers:true
+      }
+    })
   })
   return (
     <div>
+    <Navbar/>
       <div>
         <div id="body-container">
           <div id="updiv">
@@ -194,12 +236,17 @@ const Home = () => {
 
       </div>
 
+      <div className="container-fluid buysection ">
+        <div className="buysection-heading">
+          <h2>Shop Our Latest Collections</h2>
+        </div>
+      </div>
       <div className="container mt-5">
         <div className="row g-4">
           {/* Top Row - Two Cards */}
           <div className="col-md-6">
             <div className="buysection-card">
-              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
+              <div className="buysection-img" style={{ backgroundImage: "url(https://st2.depositphotos.com/6057682/10961/i/450/depositphotos_109618258-stock-photo-black-headphone-with-hat-on.jpg)" }}>
                 <div className="buysection-overlay">
                   <h3>Summer Collection</h3>
                   <button className="btn btn-outline-light mt-3">Shop Now</button>
@@ -221,11 +268,11 @@ const Home = () => {
           {/* Middle Row - Full Width Card */}
           <div className="col-12">
             <div className="buysection-card">
-              <div className="buysection-img-center" style={{ backgroundImage: "url(../../public/baner-2.jpg)" }}>
+              <div className="buysection-img-center" style={{ backgroundImage: "url(https://i.pcmag.com/imagery/articles/00ijMqYS2fuQodplAoPHRTY-1..v1720718233.jpg)" }}>
                 <div className="buysection-overlay">
                   <h2 className="display-5">Limited Time Offer</h2>
                   <p className="lead">Up to 50% Off Selected Items</p>
-                  <button className="btn btn-danger mt-3 px-4 py-2">Get Deal</button>
+                <Link to='/shop'><button className="btn btn-danger mt-3 px-4 py-2">Get Deal</button></Link>  
                 </div>
               </div>
             </div>
@@ -234,7 +281,7 @@ const Home = () => {
           {/* Bottom Row - Two Cards */}
           <div className="col-md-6">
             <div className="buysection-card">
-              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
+              <div className="buysection-img2" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
                 <div className="buysection-overlay">
                   <h3>New Arrivals</h3>
                   <button className="btn btn-outline-light mt-3">View All</button>
@@ -244,7 +291,7 @@ const Home = () => {
           </div>
           <div className="col-md-6">
             <div className="buysection-card">
-              <div className="buysection-img" style={{ backgroundImage: "url(../../public/banner-2.jpg)" }}>
+              <div className="buysection-img2" style={{ backgroundImage: "url(https://c4.wallpaperflare.com/wallpaper/297/136/13/music-headphones-brunette-closed-eyes-wallpaper-preview.jpg)" }}>
                 <div className="buysection-overlay">
                   <h3>Accessories</h3>
                   <button className="btn btn-outline-light mt-3">Browse</button>
@@ -254,7 +301,16 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
+
+      
     </div>
+
+
+
+
+      
   )
 }
 

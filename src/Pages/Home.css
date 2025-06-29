@@ -242,7 +242,16 @@ background-color: rgba(255, 255, 255, 0.77);
 
 
 /* Style.css */
-
+.buysection{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  margin-top: 150px;
+}
 
 .buysection-card {
   height: 100%;
@@ -258,7 +267,7 @@ background-color: rgba(255, 255, 255, 0.77);
   transform: translateY(-5px);
 }
 
-.buysection-img, .buysection-img-center {
+.buysection-img,.buysection-img2, .buysection-img-center {
   width: 100%;
   height: 350px;
   border-radius: 8px;
@@ -321,3 +330,9 @@ background-color: rgba(255, 255, 255, 0.77);
     font-size: 1.2rem;
   }
 }
+
+
+
+/* footer */
+
+
